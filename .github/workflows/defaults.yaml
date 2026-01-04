@@ -1,0 +1,30 @@
+name: Testing Working
+on:
+  push: 
+    branches: feature/defaults
+jobs:
+  first-job: 
+    name: First job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Creating working directory
+        run: mkdir src 
+        shell: bash
+      - name: Setting the working directory
+        run: echo "This is the working directory path $(pwd)"
+        working-directory: src
+      - name: Using the python exe
+        run: import os; print(f'The path of the working dir is {os.getcwd()}');
+        shell: python
+        working-directory: src
+  second-job:
+    name: Second Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Source Directory
+        run: mkdir src
+        shell: bash
+      - name: Use Bash
+        run: echo "I'm running bash in $(pwd). So sad."
+        shell: bash
+        working-directory: src
