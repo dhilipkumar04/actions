@@ -16,6 +16,7 @@ on:
         required: true
         default: input
         type: string
+        
   workflow_call:
     inputs:
       choice-example:
