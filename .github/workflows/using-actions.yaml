@@ -12,7 +12,7 @@ jobs:
            ls -latr
            pwd
       - name: Checkout The Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           clean: true
       - name: List Directory Contents Again
