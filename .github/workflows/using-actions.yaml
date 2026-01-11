@@ -8,9 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List Directory Contents
-        run: ls -latr
+        run: |
+           ls -latr
+           pwd
       - name: Checkout The Code
         uses: actions/checkout@v3
+        with:
+          clean: true
       - name: List Directory Contents Again
         run: ls -latr
-        
